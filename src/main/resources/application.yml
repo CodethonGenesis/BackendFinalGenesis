@@ -1,0 +1,34 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true 
+
+info:
+  application:
+    name: Spring-base
+    description: A base project with login and register.
+    author: Carles Sánchez
+    version: "@project.version@"
+spring:
+  profiles:
+    active: dev
+
+# JPA/Hibernate
+spring.jpa.hibernate.ddl-auto: update
+spring.jpa.show-sql: true
+spring.jpa.properties.hibernate.format_sql: true
+spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+spring.jackson.time-zone: Europe/Madrid
+
+
+# Configuración del servidor
+server.port: 9292
+
+# Configuración de seguridad JWT
+jwt.secret: your_jwt_secret_key_here
+jwt.expiration: 86400000
+
